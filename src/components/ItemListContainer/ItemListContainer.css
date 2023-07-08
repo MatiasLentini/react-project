@@ -1,0 +1,19 @@
+.ItemListContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 25px;
+    margin: 40px;
+    justify-content: center;
+}
+
+.CardContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.Link {
+    color: white;
+    list-style: none;
+    font-size: 18px;
+    text-decoration: none;
+}

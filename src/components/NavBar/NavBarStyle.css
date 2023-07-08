@@ -1,0 +1,27 @@
+.Navigation {
+    display: flex;
+    background: black;
+    min-height: 12vh;
+    width: 100%;
+  }
+  
+  .List-ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 95%;
+  }
+  
+  .Cart {
+    display: flex;
+    align-items: center;;
+    width: 5%;
+    list-style: none;
+  }
+  
+  .Link {
+    color: white;
+    list-style: none;
+    font-size: 18px;
+    text-decoration: none;
+  }
