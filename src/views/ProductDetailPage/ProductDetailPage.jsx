@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
+import "../../components/ItemDetail/ItemDetail.css"
 
 import { collection, query, where, getDocs, documentId } from "firebase/firestore";
 import { db } from "../../firebase/firebaseConfig";
@@ -27,9 +28,9 @@ const ProductDetailPage = () => {
     });
 
     return (
-        <div className="ItemListContainer">
+        <div className="ItemDetailContainer">
             {ProductDetailData.map((data) => {
-                return <ItemDetail product={data} key={data.id} />
+                return <ItemDetail className="CardContainer" product={data} key={data.id} />
                     ;
             })}
         </div>

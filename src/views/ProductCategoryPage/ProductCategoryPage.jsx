@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import ItemList from "../../components/ItemList/itemList";
+import { ItemList } from "../../components/ItemList/ItemList";
 
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from "../../firebase/firebaseConfig";
@@ -32,7 +32,7 @@ const ProductCategory = () => {
     <div className="ItemListContainer">
       {productByCategory.map((data) => {
         return <Link className="Link"
-          to={`/product-detail/${data.id}`}><ItemList className="CardContainer" product={data} key={data.id} /></Link>
+          to={`/product-detail/${data.id}`} key={data.id}><ItemList className="CardContainer" product={data} /></Link>
       })}
     </div>
   );

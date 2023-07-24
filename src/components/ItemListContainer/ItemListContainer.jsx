@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ItemList from "../ItemList/itemList";
+import { ItemList } from "../ItemList/ItemList";
 import { Link } from "react-router-dom";
 
 import "./ItemListContainer.css"
@@ -30,10 +30,10 @@ const ItemListContainer = () => {
             {productsData.map((data) => {
                 return (
                     <Link className="Link"
-                        to={`/product-detail/${data.id}`}>
-                        <ItemList className="CardContainer" product={data} key={data.id} />
+                        to={`/product-detail/${data.id}`} key={data.id}>
+                        <ItemList className="CardContainer" product={data} />
                     </Link>
-                );
+                ); 
             })}
         </div>
     )

@@ -1,0 +1,13 @@
+.ItemDetailContainer {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 40px;
+}
+
+.LinkShop {
+    color: black;
+    list-style: none;
+    font-size: 18px;
+    text-decoration: none;
+}

@@ -1,8 +1,8 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
+import { Box, Button, Typography, Modal } from '@mui/material';
+import { ItemCart } from '../ItemCart/ItemCart';
 import ShoppingCartSharpIcon from '@mui/icons-material/ShoppingCartSharp';
 import { grey } from '@mui/material/colors';
 
@@ -18,7 +18,11 @@ const style = {
   p: 4,
 };
 
-const CartWidget = () => {
+const CartWidget = ({product}) => {
+  const [cart, setCart] = useContext(CartContext)
+  const quantity = cart.reduce((acc, curr) => {
+    return acc + curr.quantity;
+  }, 0);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -27,7 +31,7 @@ const CartWidget = () => {
     <div>
       <Button onClick={handleOpen} variant="text" sx={{ color: grey[50] }}>
         <ShoppingCartSharpIcon />
-        <p style={{color:"white"}}>1</p>
+        <p style={{ color: "white" }}>{quantity}</p>
       </Button>
       <Modal
         open={open}
@@ -39,8 +43,12 @@ const CartWidget = () => {
           <Typography id="modal-modal-title" variant="h6" component="h2" textAlign="center">
             Shopping Cart
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+          <Typography id="modal-modal-description">
+            {cart.map((data) => {
+              return (
+                <ItemCart product={data} key={data.id}/>
+              )
+            })}
           </Typography>
         </Box>
       </Modal>
