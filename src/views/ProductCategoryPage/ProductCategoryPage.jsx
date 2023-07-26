@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 import { ItemList } from "../../components/ItemList/ItemList";
 
@@ -31,8 +30,7 @@ const ProductCategory = () => {
   return (
     <div className="ItemListContainer">
       {productByCategory.map((data) => {
-        return <Link className="Link"
-          to={`/product-detail/${data.id}`} key={data.id}><ItemList className="CardContainer" product={data} /></Link>
+        return <ItemList className="CardContainer" product={data} key={data.id}/>
       })}
     </div>
   );

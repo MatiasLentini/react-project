@@ -9,6 +9,8 @@ import ContactPage from "./views/ContactPage/ContactPage";
 import HomePage from "./views/HomePage/HomePage";
 import ProductCategoryPage from "./views/ProductCategoryPage/ProductCategoryPage";
 import ProductDetailPage from "./views/ProductDetailPage/ProductDetailPage";
+import CartPage from "./views/CartPage/CartPage";
+import CheckoutPage from "./views/CheckoutPage/CheckoutPage";
 
 // Components
 import NavBar from "./components/NavBar/NavBar";
@@ -25,6 +27,8 @@ const App = () => {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/product-category/:category" element={<ProductCategoryPage />} />
             <Route path="/product-detail/:id" element={<ProductDetailPage />} />
+            <Route path="/cart" element={<CartPage />} ></Route>
+            <Route path="/checkout" element={<CheckoutPage />}></Route>
           </Routes>
         </div>
       </Router >
